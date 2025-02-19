@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+    --WHITE: #fff;
+    --BG-COLOR: #232830;
+    --PRIMARY-COLOR: #FF7575;
+    --GRAY: #909090;
+    --BLACK: #0F1217;
+    --SOCIAL-COLOR: #4699E0;
+    --BORDER-COLOR: #252930;
+    --HR-LINE: hsl(0, 0%, 30%, 20%);
+    --MASK: linear-gradient(to right,
+    rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100% repeat-x;
+    --MARGIN: 1em;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--BG-COLOR);
+    color: var(--WHITE);
+    font-family: 'Poppins', sans-serif;
+}
+
+.break::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.hero {
+    width: 100%;
+    text-align: center;
+    margin-block-start: 5em;
+    margin-block-end: 6em;
+}
+
+.hero__navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .hero__nav {
+    list-style-type: none;
+} */
+
+.hero__logo {
+    font-size: 1.9em;
+    color: var(--WHITE);
+    text-decoration: none;
+}
+
+.hero__ul {
+    list-style-type: none;
+    display: flex;
+    gap: 3rem;
+}
+
+.hero__nav li a {
+    color: var(--WHITE);
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.hero__img {
+    margin-block-start: 4em;
+    margin-block-end: 1em;
+}
+
+.hero__heading {
+    color: var(--PRIMARY-COLOR);
+    font-size: 3.815rem;
+    font-family: 'Recursive', serif;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    margin-block: 0.15em;
+}
+
+.hero__subheading {
+    letter-spacing: 0.02em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.main {
+    border-top: 3px solid var(--HR-LINE);
+}
+
+.main__navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1em;
+}
+
+.navbar__icon {
+    margin-inline-end: 2%;
+    display: flex;
+    gap: 1em;
+}
+
+.nav__icon {
+    cursor: pointer;
+}
+
+
+.main__ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+}
+
+.main__ul li a {
+    text-decoration: none;
+    color: var(--GRAY);
+    font-size: 1.7em;
+    font-family: 'Recursive', serif;
+    font-style: italic;
+}
+
+.main__ul li:last-child a {
+    mask: var(--MASK);
+    -webkit-mask: var(--MASK);
+}
+
+.section__card {
+    margin-inline: auto;
+    margin-block: 7em;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 500px));
+    gap: 2em;
+    place-content: center;
+}
+
+.card {
+    background-color: var(--WHITE);
+    color: var(--BLACK);
+    padding: 1.5em;
+    border: 1px solid var(--BORDER-COLOR);
+    border-radius: 25px;
+    max-height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__img {
+    display: block;
+    text-align: center;
+    margin-bottom: var(--MARGIN);
+}
+
+.card__heading {
+    margin-bottom: 0.75em;
+}
+
+.card__p {
+    margin-bottom: var(--MARGIN);
+}
+
+.card__footer {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.card__period {
+    font-size: 1.5rem;
+    padding-bottom: 0.5em;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination a {
+    display: inline-block;
+    color: var(--GRAY);
+    text-decoration: none;
+    padding: 1em;
+    font-size: 1.55em;
+    font-family: 'Recursive', serif;
+    font-style: italic;
+}
+
+.pagination a:nth-child(3) {
+    border-top: 3px solid var(--PRIMARY-COLOR);
+    color: var(--PRIMARY-COLOR);
+    font-weight: 700;
+}
+
+.footer {
+    border-top: 3px solid var(--HR-LINE);
+    margin-block: 5em;
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+    font-family: 'Source Sans 3';
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.footer__dev {
+    font-size: 1.9rem;
+}
+
+.footer__devname, .footer__social {
+    background-color: var(--SOCIAL-COLOR);
+    border-radius: 5px;
+    padding: 0.25em 0.75em;
+}
+
+/* p:not(.card__topic) {
+    background-color: red;
+} */
